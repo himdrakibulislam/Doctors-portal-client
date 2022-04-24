@@ -12,7 +12,7 @@ const MakeAnAdmin = () => {
     const handleSubmit = (e)=>{
         e.preventDefault();
         const adminEmail = {email}
-        fetch('http://localhost:5000/users/admin',{
+        fetch('https://whispering-river-98579.herokuapp.com/users/admin',{
             method:'PUT',
             headers: {
                 'authorization':`Bearer ${token}`,
