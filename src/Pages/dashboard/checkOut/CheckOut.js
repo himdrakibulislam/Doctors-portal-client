@@ -10,7 +10,7 @@ const CheckOut = ({appointment}) => {
   const [processing,setProcessing] = useState(false);
   const {user} = useAuth();
   useEffect(()=>{
-    fetch('http://localhost:5000/create-payment-intent',{
+    fetch('https://whispering-river-98579.herokuapp.com/create-payment-intent',{
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -66,7 +66,7 @@ const CheckOut = ({appointment}) => {
             setSuccess('Payment Syccessful');
             setProcessing(false);
             // save to databse
-            const url = `http://localhost:5000/appointmentpayment/${_id}`;
+            const url = `https://whispering-river-98579.herokuapp.com/appointmentpayment/${_id}`;
             const payment = {
               amount: paymentIntent.amount,
               created:paymentIntent.created
