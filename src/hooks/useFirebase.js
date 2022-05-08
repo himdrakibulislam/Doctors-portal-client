@@ -86,7 +86,7 @@ const useFirebase = () => {
             setIsLoading(false);
         });
         return () => unsubscribed;
-    }, []);
+    }, [auth]);
     useEffect(()=>{
         fetch(`https://whispering-river-98579.herokuapp.com/users/${user.email}`)
         .then(res => res.json())
